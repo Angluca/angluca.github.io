@@ -5,7 +5,7 @@
   <subtitle><![CDATA[Pixel island]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.angluca.com//"/>
-  <updated>2015-06-17T08:22:20.000Z</updated>
+  <updated>2015-07-08T11:54:12.000Z</updated>
   <id>http://www.angluca.com//</id>
   
   <author>
@@ -16,11 +16,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Nim函数小技巧]]></title>
+    <link href="http://www.angluca.com/2015/07/08/nim_todo/"/>
+    <id>http://www.angluca.com/2015/07/08/nim_todo/</id>
+    <published>2015-07-08T11:39:54.000Z</published>
+    <updated>2015-07-08T11:54:12.000Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">proc</span> my_func(a:<span class="type">int</span>): <span class="type">int</span> =</span><br><span class="line">  <span class="keyword">return</span> a + <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">when</span> isMainModule:</span><br><span class="line">  echo m_y_f_UN_C(<span class="number">1</span>)</span><br><span class="line">  echo myfunc(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>上面代码编译无错哦.<br>原来Nim语言的函数名是忽略大小写和下划线的, 所以爱怎么用函数名就怎么用吧.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[Nim语言]]>
+    
+    </summary>
+    
+      <category term="Nim" scheme="http://www.angluca.com/categories/Nim/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[新的旅程]]></title>
     <link href="http://www.angluca.com/2015/06/16/start/"/>
     <id>http://www.angluca.com/2015/06/16/start/</id>
     <published>2015-06-16T06:53:21.000Z</published>
-    <updated>2015-06-17T08:22:20.000Z</updated>
+    <updated>2015-06-17T08:59:01.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>开始新的冒险, 有点小激动呢!<br>不知道该做些什么, 还是先到处看看吧.</p>
 </blockquote>
