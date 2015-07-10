@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/6 | 像素岛</title>
+  <title>Nim巧用seq转cstring | 像素岛</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Pixeller">
-<meta property="og:type" content="website">
-<meta property="og:title" content="像素岛">
-<meta property="og:url" content="http://www.angluca.com/archives/2015/06/index.html">
+  <meta name="description" content="Nim语言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nim巧用seq转cstring">
+<meta property="og:url" content="http://www.angluca.com/2015/07/10/nim-seq2cstring/index.html">
 <meta property="og:site_name" content="像素岛">
-<meta property="og:description" content="Pixeller">
+<meta property="og:description" content="Nim语言">
+<meta property="og:updated_time" content="2015-07-10T14:26:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="像素岛">
-<meta name="twitter:description" content="Pixeller">
+<meta name="twitter:title" content="Nim巧用seq转cstring">
+<meta name="twitter:description" content="Nim语言">
   
     <link rel="alternative" href="/atom.xml" title="像素岛" type="application/atom+xml">
   
@@ -61,39 +62,58 @@
   </div>
 </div>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/06/16/start/" class="archive-article-date">
-  <time datetime="2015-06-16T06:53:21.000Z" itemprop="datePublished">Jun 16</time>
+        <section id="main"><article id="post-nim-seq2cstring" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/10/nim-seq2cstring/" class="article-date">
+  <time datetime="2015-07-10T14:24:24.000Z" itemprop="datePublished">2015-07-10</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Nim/">Nim</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/06/16/start/">新的旅程</a>
+    <h1 class="article-title" itemprop="name">
+      Nim巧用seq转cstring
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>目前版本seq是不能直接转字符串的哦, 所以使用指针强转是最快的了.</p>
+<figure class="highlight nim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> typetraits</span><br><span class="line"><span class="keyword">var</span> sequ = @['h', 'e', 'l', 'l', 'o']</span><br><span class="line">sequ.add('!')</span><br><span class="line"></span><br><span class="line">echo sequ.<span class="keyword">type</span>.name</span><br><span class="line">echo sequ</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> str = <span class="keyword">cast</span>[<span class="type">cstring</span>](<span class="keyword">addr</span>(sequ[<span class="number">0</span>]))</span><br><span class="line">echo str.<span class="keyword">type</span>.name</span><br><span class="line">echo str</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.angluca.com/2015/07/10/nim-seq2cstring/" data-id="cibxpvf9o0009ufs6e1oqwq0c" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/08/nim_todo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Nim函数小技巧</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
 </section>
         
           
