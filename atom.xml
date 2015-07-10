@@ -17,8 +17,8 @@
   
   <entry>
     <title><![CDATA[Nim巧用seq转cstring]]></title>
-    <link href="http://www.angluca.com/2015/07/10/nim-seq2cstring/"/>
-    <id>http://www.angluca.com/2015/07/10/nim-seq2cstring/</id>
+    <link href="http://www.angluca.com/2015/07/10/nim_seq2cstring/"/>
+    <id>http://www.angluca.com/2015/07/10/nim_seq2cstring/</id>
     <published>2015-07-10T14:24:24.000Z</published>
     <updated>2015-07-10T14:26:22.000Z</updated>
     <content type="html"><![CDATA[<p>目前版本seq是不能直接转字符串的哦, 所以使用指针强转是最快的了.</p>
