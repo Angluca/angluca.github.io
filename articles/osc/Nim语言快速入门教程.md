@@ -57,7 +57,7 @@ nimble类似yum的工具, 可以方便安装nim其它工具和库.
 -   [**Nim 教程 (Part II)**](http://nim-lang.org/docs/tut2.html)
 -   [**Nim 使用手册**](http://nim-lang.org/docs/manual.html)
 -   [**Nim 索引大全**](http://nim-lang.org/docs/theindex.html) (nim官方所有内容在_索引大全_和_使用手册_都能找到, 什么忘记了在这两个页面用ctrl+f查找吧.)
----
+
 ### 中文教程
 
 -   [**Nim中文网教程**](https://nim-cn.com/learn.html)_(推荐)_
@@ -72,8 +72,6 @@ nimble类似yum的工具, 可以方便安装nim其它工具和库.
 -  [**Nim basics国外经典入门教程**](https://narimiran.github.io/nim-basics/ "Nim basics 国外经典入门教程")
 -   [**Nim by Example**](http://nim-by-example.github.io/)
 -   [**Nim和各种语言的一些实用算法和功能**](https://rosettacode.org/wiki/Category:Nim)
-
----
 
 ### 方便查找nim的库和函数
 

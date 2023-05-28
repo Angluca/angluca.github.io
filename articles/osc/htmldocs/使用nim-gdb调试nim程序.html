@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>像素岛</title>
+<title>使用nim-gdb调试nim程序</title>
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAUAAAAF////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAIAAABbAAAAlQAAAKIAAACbAAAAmwAAAKIAAACVAAAAWwAAAAL///8A////AP///wD///8A////AAAAABQAAADAAAAAYwAAAA3///8A////AP///wD///8AAAAADQAAAGMAAADAAAAAFP///wD///8A////AP///wAAAACdAAAAOv///wD///8A////AP///wD///8A////AP///wD///8AAAAAOgAAAJ3///8A////AP///wAAAAAnAAAAcP///wAAAAAoAAAASv///wD///8A////AP///wAAAABKAAAAKP///wAAAABwAAAAJ////wD///8AAAAAgQAAABwAAACIAAAAkAAAAJMAAACtAAAAFQAAABUAAACtAAAAkwAAAJAAAACIAAAAHAAAAIH///8A////AAAAAKQAAACrAAAAaP///wD///8AAAAARQAAANIAAADSAAAARf///wD///8AAAAAaAAAAKsAAACk////AAAAADMAAACcAAAAnQAAABj///8A////AP///wAAAAAYAAAAGP///wD///8A////AAAAABgAAACdAAAAnAAAADMAAAB1AAAAwwAAAP8AAADpAAAAsQAAAE4AAAAb////AP///wAAAAAbAAAATgAAALEAAADpAAAA/wAAAMMAAAB1AAAAtwAAAOkAAAD/AAAA/wAAAP8AAADvAAAA3gAAAN4AAADeAAAA3gAAAO8AAAD/AAAA/wAAAP8AAADpAAAAtwAAAGUAAAA/AAAA3wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAADfAAAAPwAAAGX///8A////AAAAAEgAAADtAAAAvwAAAL0AAADGAAAA7wAAAO8AAADGAAAAvQAAAL8AAADtAAAASP///wD///8A////AP///wD///8AAAAAO////wD///8A////AAAAAIcAAACH////AP///wD///8AAAAAO////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAP//AAD4HwAA7/cAAN/7AAD//wAAoYUAAJ55AACf+QAAh+EAAAAAAADAAwAA4AcAAP5/AAD//wAA//8AAA=="/>
@@ -20,34 +20,41 @@
 <body>
   <div class="document" id="documentId">
     <div class="container">
-      <!--<h1 class="title">Pixeller island</h1>-->
+      <h1 class="title">使用nim-gdb调试nim程序</h1>
       
-<h2 id="welcome-to-pixeller-islander">Welcome to Pixeller islander</h2>
-<h3 id="nim-中文文档">Nim 中文文档</h3><ol class="simple"><li><a class="reference external" href="articles/nimdocs/nim1.6.8cn/Nim中文资料.html">Nim中文教学文档</a></li>
+<h1 id="安装">安装</h1><ol class="simple"><li>前提有安装nim和mingw等</li>
+<li>nim新版本已加入nim-gdb工具方便调试, 没有可以下载放nim/bin下(8.0.0版以上gdb不用nim-gdb貌似也好调试 :)</li>
+<li>下载安装python2或3</li>
+<li>修改 nim/config/nim.cfg 里 大概214行   gcc.options.debug = &quot;-g3 -O0 -gdwarf-3&quot;  解决调试溢出问题</li>
 </ol>
 
-<h3 id="nim-以前发部的小教学">Nim 以前发部的小教学</h3><ol class="simple"><li><a class="reference external" href="articles/osc/htmldocs/Nim实用技巧集锦.html">Nim实用技巧集锦</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim语言快速入门教程.html">Nim语言快速入门教程</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim的编译方法.html">Nim的编译方法</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim编译和使用DLL.html">Nim编译和使用DLL</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim如何与C_C++_Objc互动.html">Nim如何与C_C++_Objc互动</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim如何在windows下使用winapi创建窗口.html">Nim如何在windows下使用winapi创建窗口</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim如何读取二进制文件.html">Nim如何读取二进制文件</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/使用nim-gdb调试nim程序.html">使用nim-gdb调试nim程序</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/如何使用lldb/gdb调试Nim程序.html">如何使用lldb/gdb调试Nim程序</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nimscript的使用方法.html">Nimscript的使用方法</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim各种pragma使用方法.html">Nim各种pragma使用方法</a></li>
-</ol>
-
-<h3 id="其它">其它</h3><ol class="simple"><li><a class="reference external" href="articles/osc/htmldocs/bash下个人习惯的一些文件设置.html">bash下个人习惯的一些文件设置</a></li>
-</ol>
+<h1 id="使用方法">使用方法</h1><p>首先我们写个dtest.nim</p>
+<p><pre class="listing">
+proc foo(x: int): int =
+  let y = x + 2
+  return y * 10
+proc bar(x: int): int =
+  if x == 3: return foo(x)
+  return x * 100
+proc main =
+  var a = 1
+  let str = &quot;foobar&quot;
+  var seq1 = @[0, 1, 2, 3, 4]
+  a = bar(1)
+  a = bar(2)
+  a = bar(3)
+main()</pre> 然后终端运行 调试参数<tt class="docutils literal"><span class="pre">--debugger:native</span></tt>编译nim文件 <tt class="docutils literal"><span class="pre">nim c --debugger:native dtest.nim</span></tt> 编译完使用nim-gdb来调试程序 <tt class="docutils literal"><span class="pre">nim-gdb dtest</span></tt></p>
+<p>使用break或b 来设置断点 <strong><em>(输入函数名再按tab键 可以自动完成杂交函数名)</em></strong> !<a class="reference external" href="https://oscimg.oschina.net/oscnet/up-b14462d526c8cadb948aae21accbaee5241.png &quot;b&quot;">b</a> 用run或r 开始运行, 然后会停在第8行断点!<a class="reference external" href="https://oscimg.oschina.net/oscnet/up-9c96929745e141fb229bfa9492ede27a9bb.png"></a> list或l 来查看行数周围的代码列表 !<a class="reference external" href="https://oscimg.oschina.net/oscnet/up-12d62ded6b00f3068b55b9e79c86d172d0c.png"></a> next或n 来运行下一行, print或p 查看变量 !<a class="reference external" href="https://oscimg.oschina.net/oscnet/up-bf30cbf0bba97076fec3925c682e4ed03eb.png"></a> step或s 进入函数地址, continue或c运行到断点或结束, finish或fin 运行到跳出当前模块!<a class="reference external" href="https://oscimg.oschina.net/oscnet/up-5a15b6c17545a7f9bd14f9488ff7b5d0ac9.png"></a> backtrace或bt 查看模块运行步骤, 从下往上!<a class="reference external" href="https://oscimg.oschina.net/oscnet/up-49d7c4c7a488eb885fbe17db0e832410a79.png"></a> info break或i b 和delete或d 查看和删除断点!<a class="reference external" href="https://oscimg.oschina.net/oscnet/up-42e400bc1b206a206266230610e70aec9df.png"></a> info locals或 i lo查看当前模块变量!<a class="reference external" href="https://oscimg.oschina.net/oscnet/up-1ac718609f7b60c93fb2d1cb0dd2b6de3b4.png"></a> watch或wa 可以让选择查看的变量改变时 变成断点!<a class="reference external" href="https://oscimg.oschina.net/oscnet/up-6cda76553ffdec130c4651ebf5bdbab4e22.png"></a> until或u 可以跳出循环模块 像while, for等 还有更多的命令, 可以详细了解下gdb :)</p>
+<ul class="simple"><li>具体参考</li>
+</ul>
+<p><a class="reference external" href="https://internet-of-tomohiro.netlify.com/nim/gdb.en.html &quot;Debug Nim with GDB&quot;">Debug Nim with GDB</a> </p>
 
 
 
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-05-28 20:13:35 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-05-28 20:33:07 UTC</small>
       </div>
     </div>
   </div>

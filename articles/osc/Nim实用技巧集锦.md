@@ -1,5 +1,6 @@
 > ###### 更多nim教程和技巧, 可以关注:)  「[my.oschina.net/angluca](http://my.oschina.net/angluca)」
 ###### 函数名的使用
+
 ```nim
 proc my_func(a:int): int =
   return a + 100

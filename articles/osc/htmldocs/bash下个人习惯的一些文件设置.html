@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>像素岛</title>
+<title>bash下个人习惯的一些文件设置</title>
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAUAAAAF////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAIAAABbAAAAlQAAAKIAAACbAAAAmwAAAKIAAACVAAAAWwAAAAL///8A////AP///wD///8A////AAAAABQAAADAAAAAYwAAAA3///8A////AP///wD///8AAAAADQAAAGMAAADAAAAAFP///wD///8A////AP///wAAAACdAAAAOv///wD///8A////AP///wD///8A////AP///wD///8AAAAAOgAAAJ3///8A////AP///wAAAAAnAAAAcP///wAAAAAoAAAASv///wD///8A////AP///wAAAABKAAAAKP///wAAAABwAAAAJ////wD///8AAAAAgQAAABwAAACIAAAAkAAAAJMAAACtAAAAFQAAABUAAACtAAAAkwAAAJAAAACIAAAAHAAAAIH///8A////AAAAAKQAAACrAAAAaP///wD///8AAAAARQAAANIAAADSAAAARf///wD///8AAAAAaAAAAKsAAACk////AAAAADMAAACcAAAAnQAAABj///8A////AP///wAAAAAYAAAAGP///wD///8A////AAAAABgAAACdAAAAnAAAADMAAAB1AAAAwwAAAP8AAADpAAAAsQAAAE4AAAAb////AP///wAAAAAbAAAATgAAALEAAADpAAAA/wAAAMMAAAB1AAAAtwAAAOkAAAD/AAAA/wAAAP8AAADvAAAA3gAAAN4AAADeAAAA3gAAAO8AAAD/AAAA/wAAAP8AAADpAAAAtwAAAGUAAAA/AAAA3wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAADfAAAAPwAAAGX///8A////AAAAAEgAAADtAAAAvwAAAL0AAADGAAAA7wAAAO8AAADGAAAAvQAAAL8AAADtAAAASP///wD///8A////AP///wD///8AAAAAO////wD///8A////AAAAAIcAAACH////AP///wD///8AAAAAO////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAP//AAD4HwAA7/cAAN/7AAD//wAAoYUAAJ55AACf+QAAh+EAAAAAAADAAwAA4AcAAP5/AAD//wAA//8AAA=="/>
@@ -20,34 +20,35 @@
 <body>
   <div class="document" id="documentId">
     <div class="container">
-      <!--<h1 class="title">Pixeller island</h1>-->
-      
-<h2 id="welcome-to-pixeller-islander">Welcome to Pixeller islander</h2>
-<h3 id="nim-中文文档">Nim 中文文档</h3><ol class="simple"><li><a class="reference external" href="articles/nimdocs/nim1.6.8cn/Nim中文资料.html">Nim中文教学文档</a></li>
-</ol>
+      <h1 class="title">bash下个人习惯的一些文件设置</h1>
+      <p>bash_profile</p>
+<p><pre class="listing">
+export PATH=/usr/local/bin:$PATH
+export EDITOR=vi</pre> inputrc</p>
+<p><pre class="listing">
+set editing-mode vi
+#set editing-mode emacs
+set show-all-if-ambiguous on
+set completion-ignore-case on
+set meta-flag on
+set convert-meta off
+set output-meta on
+set bell-style visible
 
-<h3 id="nim-以前发部的小教学">Nim 以前发部的小教学</h3><ol class="simple"><li><a class="reference external" href="articles/osc/htmldocs/Nim实用技巧集锦.html">Nim实用技巧集锦</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim语言快速入门教程.html">Nim语言快速入门教程</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim的编译方法.html">Nim的编译方法</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim编译和使用DLL.html">Nim编译和使用DLL</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim如何与C_C++_Objc互动.html">Nim如何与C_C++_Objc互动</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim如何在windows下使用winapi创建窗口.html">Nim如何在windows下使用winapi创建窗口</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim如何读取二进制文件.html">Nim如何读取二进制文件</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/使用nim-gdb调试nim程序.html">使用nim-gdb调试nim程序</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/如何使用lldb/gdb调试Nim程序.html">如何使用lldb/gdb调试Nim程序</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nimscript的使用方法.html">Nimscript的使用方法</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim各种pragma使用方法.html">Nim各种pragma使用方法</a></li>
-</ol>
-
-<h3 id="其它">其它</h3><ol class="simple"><li><a class="reference external" href="articles/osc/htmldocs/bash下个人习惯的一些文件设置.html">bash下个人习惯的一些文件设置</a></li>
-</ol>
+&quot;\C-l&quot;: clear-screen
+&quot;\C-n&quot;: next-history
+&quot;\C-p&quot;: previous-history
+&quot;\C-a&quot;: beginning-of-line
+&quot;\C-e&quot;: end-of-line
+&quot;\C-f&quot;: forward-char
+&quot;\C-b&quot;: backward-char</pre> </p>
 
 
 
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-05-28 20:13:35 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-05-28 20:32:45 UTC</small>
       </div>
     </div>
   </div>

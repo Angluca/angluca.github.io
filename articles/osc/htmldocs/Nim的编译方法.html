@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>像素岛</title>
+<title>Nim的编译方法</title>
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAUAAAAF////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAIAAABbAAAAlQAAAKIAAACbAAAAmwAAAKIAAACVAAAAWwAAAAL///8A////AP///wD///8A////AAAAABQAAADAAAAAYwAAAA3///8A////AP///wD///8AAAAADQAAAGMAAADAAAAAFP///wD///8A////AP///wAAAACdAAAAOv///wD///8A////AP///wD///8A////AP///wD///8AAAAAOgAAAJ3///8A////AP///wAAAAAnAAAAcP///wAAAAAoAAAASv///wD///8A////AP///wAAAABKAAAAKP///wAAAABwAAAAJ////wD///8AAAAAgQAAABwAAACIAAAAkAAAAJMAAACtAAAAFQAAABUAAACtAAAAkwAAAJAAAACIAAAAHAAAAIH///8A////AAAAAKQAAACrAAAAaP///wD///8AAAAARQAAANIAAADSAAAARf///wD///8AAAAAaAAAAKsAAACk////AAAAADMAAACcAAAAnQAAABj///8A////AP///wAAAAAYAAAAGP///wD///8A////AAAAABgAAACdAAAAnAAAADMAAAB1AAAAwwAAAP8AAADpAAAAsQAAAE4AAAAb////AP///wAAAAAbAAAATgAAALEAAADpAAAA/wAAAMMAAAB1AAAAtwAAAOkAAAD/AAAA/wAAAP8AAADvAAAA3gAAAN4AAADeAAAA3gAAAO8AAAD/AAAA/wAAAP8AAADpAAAAtwAAAGUAAAA/AAAA3wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAADfAAAAPwAAAGX///8A////AAAAAEgAAADtAAAAvwAAAL0AAADGAAAA7wAAAO8AAADGAAAAvQAAAL8AAADtAAAASP///wD///8A////AP///wD///8AAAAAO////wD///8A////AAAAAIcAAACH////AP///wD///8AAAAAO////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAP//AAD4HwAA7/cAAN/7AAD//wAAoYUAAJ55AACf+QAAh+EAAAAAAADAAwAA4AcAAP5/AAD//wAA//8AAA=="/>
@@ -20,34 +20,51 @@
 <body>
   <div class="document" id="documentId">
     <div class="container">
-      <!--<h1 class="title">Pixeller island</h1>-->
-      
-<h2 id="welcome-to-pixeller-islander">Welcome to Pixeller islander</h2>
-<h3 id="nim-中文文档">Nim 中文文档</h3><ol class="simple"><li><a class="reference external" href="articles/nimdocs/nim1.6.8cn/Nim中文资料.html">Nim中文教学文档</a></li>
-</ol>
-
-<h3 id="nim-以前发部的小教学">Nim 以前发部的小教学</h3><ol class="simple"><li><a class="reference external" href="articles/osc/htmldocs/Nim实用技巧集锦.html">Nim实用技巧集锦</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim语言快速入门教程.html">Nim语言快速入门教程</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim的编译方法.html">Nim的编译方法</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim编译和使用DLL.html">Nim编译和使用DLL</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim如何与C_C++_Objc互动.html">Nim如何与C_C++_Objc互动</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim如何在windows下使用winapi创建窗口.html">Nim如何在windows下使用winapi创建窗口</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim如何读取二进制文件.html">Nim如何读取二进制文件</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/使用nim-gdb调试nim程序.html">使用nim-gdb调试nim程序</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/如何使用lldb/gdb调试Nim程序.html">如何使用lldb/gdb调试Nim程序</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nimscript的使用方法.html">Nimscript的使用方法</a></li>
-<li><a class="reference external" href="articles/osc/htmldocs/Nim各种pragma使用方法.html">Nim各种pragma使用方法</a></li>
-</ol>
-
-<h3 id="其它">其它</h3><ol class="simple"><li><a class="reference external" href="articles/osc/htmldocs/bash下个人习惯的一些文件设置.html">bash下个人习惯的一些文件设置</a></li>
-</ol>
+      <h1 class="title">Nim的编译方法</h1>
+      一般的编译参数: cc 编译成C语言, c默认为cc. cpp 编译成C++语言 objc 编译成objc语言 js 编译成javascript脚本, 可以建一个html文件在&lt;script src=&quot;test.js&quot;&gt;&lt;/script&gt;里运行.<div class="option-list"><div class="option-list-item odd"><div class="option-list-label"><tt><span class="option">-d:release 进行release编译.</span></tt></div><div class="option-list-description"></div></div>
+<div class="option-list-item"><div class="option-list-label"><tt><span class="option">-r 编译完成后运行程序</span></tt></div><div class="option-list-description"></div></div>
+<div class="option-list-item odd"><div class="option-list-label"><tt><span class="option">--cincludes:. 包含 当前目录(./)的 c头文件.</span></tt></div><div class="option-list-description"></div></div>
+</div><p>具体参考 <a class="reference external" href="http://nim-lang.org/docs/nimc.html#cross-compilation">cross-compilation</a>.</p>
+<p>示例:</p>
+<p><pre class="listing">
+&gt; nim c -d:release -r test.nim
+&gt; nim objc test.nim
+&gt; nim js test.nim</pre></p>
+<p>伪交叉编译: 伪交叉编译会在nimcache目录里生成跨平台c语言代码, 当前目录生成compile_test.sh编译脚本, 把几个文件都考到要生成的i386:linux机器上运行该sh脚本就会编译成应用程序. (其实就是类似于make了一下-.-!) 示例:</p>
+<p><pre class="listing">
+&gt; nim c --cpu:i386 --os:linux --compile_only --gen_script test.nim</pre> 交叉编译: (这次不是伪了!)</p>
+<p><pre class="listing">
+&gt; nim c --cpu:arm --os:linux test.nim</pre> 当然你得设置编译器和链接器这些玩意, 同目录建一个nim.cfg文件里面写上相关参数.</p>
+<p><pre class="listing">
+arm.linux.gcc.path = &quot;/usr/bin&quot;
+arm.linux.gcc.exe = &quot;arm-linux-gcc&quot;
+arm.linux.gcc.linkerexe = &quot;arm-linux-gcc&quot;</pre> 这里有一个编译emscripten fc nes模拟器程序例子(具体可看这里<a class="reference external" href="http://hookrace.net/nimes/?nes=smb.nes">nimnes</a>), 先在nim.cfg设置好参数, 然后运行</p>
+<p><pre class="listing">
+nim -d:release -d:emscripten</pre></p>
+<div class="option-list"><div class="option-list-item odd"><div class="option-list-label"><tt><span class="option">-d:emscripten其实就是执行@if@end里的内容.</span></tt></div><div class="option-list-description"></div></div>
+</div><p><pre class="listing">
+#nim.cfg
+@if emscripten:
+  define = SDL_Static
+  gc = none
+  cc = clang
+  clang.exe = &quot;emcc&quot;
+  clang.linkerexe = &quot;emcc&quot;
+  clang.options.linker = &quot;&quot;
+  cpu = &quot;i386&quot;
+  out = &quot;nimes.html&quot;
+  warning[GcMem] = off
+  passC = &quot;-Wno-warn-absolute-paths -Iemscripten -s USE_SDL=2&quot;
+  passL = &quot;-O3 -Lemscripten -s USE_SDL=2 --preload-file tetris.nes --preload-file pacman.nes --preload-file smb.nes --preload-file smb3.nes -s TOTAL_MEMORY=16777216&quot;
+@end</pre> 参考资料:<a class="reference external" href="http://nim-lang.org/docs/nimc.html#cross-compilation">cross-compilation</a></p>
+<p>相关案例:<a class="reference external" href="http://hookrace.net/blog/porting-nes-go-nim/">Porting a NES emulator from Go to Nim</a> </p>
 
 
 
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-05-28 20:13:35 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-05-28 20:29:47 UTC</small>
       </div>
     </div>
   </div>
