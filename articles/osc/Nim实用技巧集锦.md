@@ -1,4 +1,4 @@
-> ###### 更多nim教程和技巧, 可以关注:)  「[my.oschina.net/angluca](http://my.oschina.net/angluca)」
+> ###### 更多nim教程和技巧, 可以关注:)  「[www.angluca.com](http://www.angluca.com)」
 ###### 函数名的使用
 
 ```nim

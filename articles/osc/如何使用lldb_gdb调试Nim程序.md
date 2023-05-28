@@ -1,5 +1,5 @@
 * **nim新版本已加入nim-gdb工具方便调试, 具体可以点击**  
-[使用nim-gdb调试nim程序](https://my.oschina.net/angluca/blog/3202507l)
+[使用nim-gdb调试nim程序](使用nim-gdb调试nim程序.md)
   
  
  
