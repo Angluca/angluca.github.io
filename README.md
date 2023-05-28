@@ -1,7 +1,7 @@
 ## Welcome to Pixeller islander
 
 ### Nim 中文文档
-1. [Nim中文教学文档](https://github.com/angluca/angluca.github.io/tree/master/osc/articles/nimdocs/nim1.6.8cn/Nim中文资料.html)
+1. [Nim中文教学文档](https://github.com/Angluca/angluca.github.io/blob/master/articles/nimdocs/nim1.6.8cn/Nim%E4%B8%AD%E6%96%87%E8%B5%84%E6%96%99.html)
 
 ### Nim 以前发部的小教学
 1. [Nim实用技巧集锦](https://github.com/angluca/angluca.github.io/tree/master/osc/articles/Nim实用技巧集锦.md)
