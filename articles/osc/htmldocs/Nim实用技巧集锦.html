@@ -181,7 +181,7 @@ abc</pre></p>
 <span class="Identifier">assert</span><span class="Punctuation">(</span><span class="Identifier">str</span> <span class="Keyword">is</span> <span class="Identifier">string</span><span class="Punctuation">)</span> <span class="Comment">#值为 true</span></pre></p>
 <p>of可以判断是否为继承类, is只能判断是否为当前类型.</p>
 
-<h6 id="手动释放非追踪对象-特别注意colon-如果一个非追踪对象包含了追踪对象-比如追踪引用、字符串或者序列-为了正确地释放每一块内存-在手动释放非追踪内存前必须调用-gc-unref">手动释放非追踪对象 特别注意: 如果一个非追踪对象包含了追踪对象(比如追踪引用、字符串或者序列),为了正确地释放每一块内存,在手动释放非追踪内存前必须调用 GC_unref()</h6><p><pre class="listing">
+<h6 id="手动释放非追踪对象-特别注意colon-如果一个非追踪对象包含了追踪对象-比如追踪引用、字符串或者序列-为了正确地释放每一块内存-在手动释放非追踪内存前必须调用-gc-unref">手动释放非追踪对象 特别注意: 如果一个非追踪对象包含了追踪对象(比如追踪引用、字符串或者序列),为了正确地释放每一块内存,在手动释放非追踪内存前必须调用 reset()</h6><p><pre class="listing">
 <span class="Keyword">type</span>
     <span class="Identifier">Data</span> <span class="Operator">=</span> <span class="Keyword">tuple</span><span class="Punctuation">[</span><span class="Identifier">x</span><span class="Punctuation">,</span> <span class="Identifier">y</span><span class="Punctuation">:</span> <span class="Identifier">int</span><span class="Punctuation">,</span> <span class="Identifier">s</span><span class="Punctuation">:</span> <span class="Identifier">string</span><span class="Punctuation">]</span>
 <span class="Comment"># 为 Data 在堆上分配内存</span>
@@ -189,10 +189,10 @@ abc</pre></p>
 <span class="Comment"># 通过 GC 在堆上创建一个新的字符串</span>
 <span class="Identifier">d</span><span class="Operator">.</span><span class="Identifier">s</span> <span class="Operator">=</span> <span class="StringLit">&quot;abc&quot;</span>
 <span class="Comment"># 告诉 GC 该字符串不再需要</span>
-<span class="Identifier">GC_unref</span><span class="Punctuation">(</span><span class="Identifier">d</span><span class="Operator">.</span><span class="Identifier">s</span><span class="Punctuation">)</span>
+<span class="Identifier">reset</span><span class="Punctuation">(</span><span class="Identifier">d</span><span class="Operator">.</span><span class="Identifier">s</span><span class="Punctuation">)</span>
 <span class="Comment"># 释放内存</span>
 <span class="Identifier">dealloc</span><span class="Punctuation">(</span><span class="Identifier">d</span><span class="Punctuation">)</span></pre></p>
-<p>如果在 dealloc(d) 之前没有调用 GC_unref(d.s), 那么这个字符串内存永远不会释放. 上面的例子也给出了底层编程的两个重要特点: sizeof() 函数返回一个类型的字节大小, cast[] 可以使编译器强制把内存用某个特定类型表示, 只有必要的情况下使用 cast[], 它破坏类型安全且容易滋生 bug.</p>
+<p>如果在 dealloc(d) 之前没有调用 reset(d.s), 那么这个字符串内存永远不会释放. 上面的例子也给出了底层编程的两个重要特点: sizeof() 函数返回一个类型的字节大小, cast[] 可以使编译器强制把内存用某个特定类型表示, 只有必要的情况下使用 cast[], 它破坏类型安全且容易滋生 bug.</p>
 <p>注意: 上面的例子可以工作是因为其内存已经通过 alloc0() 初始化为 0, 也因此 d.s 被初始化为 nil 并且可以对其赋值.</p>
 
 <h6 id="禁止类型对象使用nil值-所有的值可以是-nil-的类型-可以通过-not-nil-声明为禁止使用-nil-值dot">禁止类型对象使用nil值 所有的值可以是 nil 的类型, 可以通过 not nil 声明为禁止使用 nil 值.</h6><p><pre class="listing">
