@@ -1,5 +1,5 @@
 ## Nim 中文资料
-1. [Nim中文教学文档](http://www.angluca.com/articles/nimdocs/nim1.6.8cn/Nim中文资料.html)
+1. [Nim中文教学文档](articles/nimdocs/nim1.6.8cn/Nim中文资料.html)
 
 ## Nim 以前发布的小教学
 1. [Nim实用技巧集锦](articles/osc/Nim实用技巧集锦.md)
